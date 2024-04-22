@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="276.0" prefWidth="493.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mp3pplayer.HelloController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="276.0" prefWidth="493.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.melotrack.HelloController">
    <center>
       <VBox alignment="CENTER" prefHeight="272.0" prefWidth="476.0" style="-fx-background-color: #a9a9a9;" BorderPane.alignment="CENTER">
          <children>
@@ -45,4 +45,7 @@
          </children>
       </VBox>
    </center>
+   <bottom>
+      <Label fx:id="logoutLabel" onMouseClicked="#handleLogout" text="Logout" BorderPane.alignment="CENTER" />
+   </bottom>
 </BorderPane>

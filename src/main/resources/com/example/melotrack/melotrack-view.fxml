@@ -12,11 +12,11 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="408.0" prefWidth="265.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.melotrack.MeloTrackController">
    <children>
-      <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="246.0" pickOnBounds="true" preserveRatio="true">
          <VBox.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </VBox.margin></ImageView>
-      <Label text="Melo-Track" textAlignment="CENTER">
+      <Label alignment="CENTER" prefHeight="42.0" prefWidth="258.0" text="Melo-Track" textAlignment="CENTER">
          <font>
             <Font name="Arial" size="36.0" />
          </font>
@@ -28,7 +28,7 @@
          <children>
             <VBox prefHeight="100.0" prefWidth="266.0">
                <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <Label text="Username">
                            <HBox.margin>
@@ -42,7 +42,7 @@
                         </TextField>
                      </children>
                   </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <Label text="Password">
                            <HBox.margin>
@@ -60,7 +60,7 @@
             </VBox>
          </children>
       </HBox>
-      <HBox>
+      <HBox alignment="CENTER">
          <children>
             <Button fx:id="registerButton" mnemonicParsing="false" onAction="#handleRegisterButton" text="Sign Up">
                <HBox.margin>

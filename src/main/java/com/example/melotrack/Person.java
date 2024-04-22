@@ -5,7 +5,6 @@ public class Person {
     private String email;
     private  String phoneNumber;
     private String username;
-
     private String password;
 
     public Person(String name, String email, String phoneNumber, String username, String password) {

@@ -5,28 +5,53 @@ import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.WriteResult;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.UserRecord;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ResourceBundle;
 import java.util.UUID;
 
-public class RegisterController {
+public class RegisterController implements Initializable {
+
+    @FXML
+    private Button returnToSigninButton, registerButton;
 
     @FXML
     private TextField emailTF, phoneNumberTF, nameTF, usernameTF;
 
     @FXML
     private PasswordField passwordTF;
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        TextFieldBinding textFieldBindingModel = new TextFieldBinding();
+        nameTF.textProperty().bindBidirectional(textFieldBindingModel.nameProperty());
+        emailTF.textProperty().bindBidirectional(textFieldBindingModel.emailProperty());
+        phoneNumberTF.textProperty().bindBidirectional(textFieldBindingModel.phoneNumberProperty());
+        usernameTF.textProperty().bindBidirectional(textFieldBindingModel.usernameProperty());
+        passwordTF.textProperty().bindBidirectional(textFieldBindingModel.passwordProperty());
+        registerButton.disableProperty().bind(textFieldBindingModel.isFunctionPossibleProperty().not());
+    }
     @FXML
-    private void handleRegisterButton(ActionEvent event) {
+    private void handleRegisterButton() {
         registerUser();
         addData();
+    }
+    @FXML
+    public void handleReturnToSignin() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("melotrack-view.fxml"));
+        Stage registerPage = (Stage) returnToSigninButton.getScene().getWindow();
+        registerPage.setScene(new Scene(root));
     }
     public static void saveUserInfo() {
 
@@ -47,7 +72,6 @@ public class RegisterController {
             return true;
 
         } catch (FirebaseAuthException ex) {
-            // Logger.getLogger(FirestoreContext.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Error");
             return false;
         }
@@ -65,8 +89,6 @@ public class RegisterController {
 
         //asynchronously write data
         ApiFuture<WriteResult> result = docRef.set(data);
-        System.out.println("data added");
+        System.out.println("data added" + result);
     }
-
-
 }
