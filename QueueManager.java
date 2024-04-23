@@ -21,6 +21,5 @@ public class QueueManager {
         return queue.isEmpty();
     }
 
-    // Other methods for managing the queue (peek, clear, etc.)
 }
 
