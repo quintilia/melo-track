@@ -1,39 +1,34 @@
-package com.example.melotrack;
+package com.example.mp3pplayer;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.FileChooser;
 
-import java.io.IOException;
 import java.util.Map;
 import java.io.File;
 
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class HelloController {
 
     @FXML
-    private Label chooseMusic, logoutLabel;
+    private Label chooseMusic;
     private MediaPlayer mediaPlayer;
 
     @FXML
     void chooseMusic(MouseEvent event) {
-        FileChooser chooser=new FileChooser();
+        FileChooser chooser = new FileChooser();
         chooser.setTitle("Select your Music");
-        File file=chooser.showOpenDialog(null);
-        if(file != null){
-            String selectedFile=file.toURI().toString();
-            Media media=new Media(selectedFile);
-            mediaPlayer=new MediaPlayer(media);
-            mediaPlayer.setOnReady(() ->{
+        File file = chooser.showOpenDialog(null);
+        if (file != null) {
+            String selectedFile = file.toURI().toString();
+            Media media = new Media(selectedFile);
+            mediaPlayer = new MediaPlayer(media);
+            mediaPlayer.setOnReady(() -> {
                 chooseMusic.setText(file.getName());
                 double durationInSeconds = media.getDuration().toSeconds();
                 int minutes = (int) durationInSeconds / 60;
@@ -56,17 +51,17 @@ public class HelloController {
 
     @FXML
     void pause(MouseEvent event) {
-mediaPlayer.pause();
+        mediaPlayer.pause();
     }
 
     @FXML
     void play(MouseEvent event) {
-mediaPlayer.play();
+        mediaPlayer.play();
     }
 
     @FXML
     void stop(MouseEvent event) {
-mediaPlayer.stop();
+        mediaPlayer.stop();
     }
 
     public void forward(ActionEvent actionEvent) {
@@ -79,15 +74,6 @@ mediaPlayer.stop();
         if (mediaPlayer != null) {
             mediaPlayer.seek(mediaPlayer.getCurrentTime().subtract(Duration.seconds(5))); // Rewind by 5 seconds (adjust as needed)
         }
-    }
-    /*
-    handleLogout method will allow users to return to Signin page.
-     */
-    @FXML
-    void handleLogout() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("melotrack-view.fxml"));
-        Stage registerPage = (Stage) logoutLabel.getScene().getWindow();
-        registerPage.setScene(new Scene(root));
     }
 
 
