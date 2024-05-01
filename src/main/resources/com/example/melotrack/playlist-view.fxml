@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.melotrack.PlaylistController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleLogout" text="Logout" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <HBox prefHeight="0.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <left>
+      <VBox prefHeight="338.0" prefWidth="198.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="17.0" prefWidth="101.0" text="Playlist" />
+            <ListView fx:id="playlistLV" prefHeight="327.0" prefWidth="198.0" />
+            <HBox prefHeight="41.0" prefWidth="198.0">
+               <children>
+                  <Button fx:id="createPlaylistButton" mnemonicParsing="false" onAction="#handleCreatePlaylistButton" text="Create Playlist" />
+                  <Button fx:id="deletePlaylistButton" mnemonicParsing="false" onAction="#handleDeletePlaylistButton" text="Delete Playlist" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="songsTV" prefHeight="403.0" prefWidth="402.0">
+              <columns>
+                <TableColumn fx:id="titleTC" prefWidth="124.00006103515625" text="Title" />
+                <TableColumn fx:id="artistTC" prefWidth="92.00006103515625" text="Artist" />
+                  <TableColumn fx:id="albumTC" prefWidth="93.333251953125" text="Album" />
+                  <TableColumn fx:id="lengthTC" prefWidth="89.3333740234375" text="Length" />
+              </columns>
+            </TableView>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="addSongButton" mnemonicParsing="false" onAction="#handleAddSongButton" text="Add Song" />
+                  <Button fx:id="deleteSongButton" mnemonicParsing="false" onAction="#handleDeleteSongButton" text="Delete Song" />
+                   <Button fx:id="songsButton" text="Back to MP3 Player" onAction="#handleSongsButtonAction"/>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
