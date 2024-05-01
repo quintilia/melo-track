@@ -20,6 +20,7 @@ public class FirestoreContext {
 
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+                    .setStorageBucket("gs://melotrack325.appspot.com")
                     .build();
 
             FirebaseApp.initializeApp(options);
