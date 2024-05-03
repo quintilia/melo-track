@@ -7,8 +7,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.FileChooser;
+
 import java.util.Map;
 import java.io.File;
+
 import javafx.util.Duration;
 
 public class HelloController {
@@ -19,14 +21,14 @@ public class HelloController {
 
     @FXML
     void chooseMusic(MouseEvent event) {
-        FileChooser chooser=new FileChooser();
+        FileChooser chooser = new FileChooser();
         chooser.setTitle("Select your Music");
-        File file=chooser.showOpenDialog(null);
-        if(file != null){
-            String selectedFile=file.toURI().toString();
-            Media media=new Media(selectedFile);
-            mediaPlayer=new MediaPlayer(media);
-            mediaPlayer.setOnReady(() ->{
+        File file = chooser.showOpenDialog(null);
+        if (file != null) {
+            String selectedFile = file.toURI().toString();
+            Media media = new Media(selectedFile);
+            mediaPlayer = new MediaPlayer(media);
+            mediaPlayer.setOnReady(() -> {
                 chooseMusic.setText(file.getName());
                 double durationInSeconds = media.getDuration().toSeconds();
                 int minutes = (int) durationInSeconds / 60;
@@ -49,17 +51,17 @@ public class HelloController {
 
     @FXML
     void pause(MouseEvent event) {
-mediaPlayer.pause();
+        mediaPlayer.pause();
     }
 
     @FXML
     void play(MouseEvent event) {
-mediaPlayer.play();
+        mediaPlayer.play();
     }
 
     @FXML
     void stop(MouseEvent event) {
-mediaPlayer.stop();
+        mediaPlayer.stop();
     }
 
     public void forward(ActionEvent actionEvent) {

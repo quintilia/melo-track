@@ -13,7 +13,10 @@ module com.example.mp3pplayer {
     requires google.cloud.firestore;
     requires google.cloud.core;
     requires com.google.api.apicommon;
+    requires com.jfoenix;
 
     opens com.example.mp3pplayer to javafx.fxml;
     exports com.example.mp3pplayer;
+
+
 }
