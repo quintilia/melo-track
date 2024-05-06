@@ -1,10 +1,11 @@
-module com.example.melotrack {
+module com.example.mp3pplayer {
     requires javafx.controls;
     requires javafx.fxml;
 
     requires javafx.media;
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
+    requires java.sql;
     requires firebase.admin;
     requires com.google.auth;
     requires com.google.auth.oauth2;

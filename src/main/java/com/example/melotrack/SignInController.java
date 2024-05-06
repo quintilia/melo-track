@@ -38,7 +38,7 @@ public class SignInController implements Initializable {
         System.out.println("Successfully fetched user data: " + userRecord.getEmail());
         if(emailTextfield.getText().matches(userRecord.getEmail()) && passwordTextField.getText().matches(userRecord.getDisplayName())){
             System.out.println("Signed in successfully");
-            MeloTrack.setRoot("playlist-view");
+            MeloTrack.setRoot("Mp3Player");
         }else{
             Alert alert = new Alert(
                     Alert.AlertType.WARNING);

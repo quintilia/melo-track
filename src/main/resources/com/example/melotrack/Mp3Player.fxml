@@ -12,7 +12,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="640.0" styleClass="lastpane" stylesheets="@Stylesheet.css"
             xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.mp3pplayer.Mp3PlayerController">
+            fx:controller="com.example.melotrack.Mp3PlayerController">
 
 
     <children>

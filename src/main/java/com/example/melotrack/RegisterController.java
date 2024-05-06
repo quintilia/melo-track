@@ -15,6 +15,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.concurrent.ExecutionException;
 
+import static com.example.melotrack.MeloTrack.fauth;
+
 public class RegisterController implements Initializable {
 
     @FXML
@@ -35,7 +37,7 @@ public class RegisterController implements Initializable {
         registerButton.disableProperty().bind(textFieldBindingModel.isFunctionPossibleProperty().not());
     }
     @FXML
-    private void handleRegisterButton() throws ExecutionException, InterruptedException {
+    private void handleRegisterButton() {
         registerUser(new User(nameTF.getText(),emailTF.getText(), phoneNumberTF.getText(), passwordTF.getText()));
     }
     @FXML
@@ -57,7 +59,7 @@ public class RegisterController implements Initializable {
                     .setDisabled(false);
             UserRecord userRecord;
             try {
-                userRecord = MeloTrack.fauth.createUser(request);
+                userRecord = fauth.createUser(request);
                 Alert alert = new Alert(
                         Alert.AlertType.INFORMATION);
                 alert.setHeaderText("New User Registered");
