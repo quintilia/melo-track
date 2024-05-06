@@ -32,13 +32,23 @@ public class SignInController implements Initializable {
         MeloTrack.setRoot("register-view");
     }
 
-    public void handleSignInButton() throws IOException, FirebaseAuthException {
+    public void handleSignInButton() throws FirebaseAuthException, IOException {
         UserRecord userRecord = fauth.getUserByEmail(emailTextfield.getText());
 
-        System.out.println("Successfully fetched user data: " + userRecord.getEmail());
         if(emailTextfield.getText().matches(userRecord.getEmail()) && passwordTextField.getText().matches(userRecord.getDisplayName())){
-            System.out.println("Signed in successfully");
-            MeloTrack.setRoot("Mp3Player");
+            Alert alert = new Alert(
+                    Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Signin Successful");
+            alert.setTitle("User Signin");
+            alert.setContentText("Welcome to MeloTrack.");
+            alert.setOnCloseRequest(e -> {
+                try {
+                    MeloTrack.setRoot("Mp3Player");
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            });
+            alert.show();
         }else{
             Alert alert = new Alert(
                     Alert.AlertType.WARNING);
