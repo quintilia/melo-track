@@ -1,4 +1,4 @@
-package com.example.mp3pplayer;
+package com.example.melotrack;
 
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

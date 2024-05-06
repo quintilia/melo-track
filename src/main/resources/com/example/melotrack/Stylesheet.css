@@ -1,4 +1,4 @@
-.sidebar{
+.dark_theme{
     -fx-background-color: #353839;
 }
 .sidebar-btn{
@@ -45,3 +45,4 @@
 .handCursor{
 -fx-cursor: HAND;
 }
+

@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="500.0" styleClass="dark_theme" xmlns="http://javafx.com/javafx/17.0.2-ea"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mp3pplayer.CreatePlaylistController">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.melotrack.LoadPlaylistController">
     <children>
         <VBox prefHeight="400.0" prefWidth="500.0">
             <children>
@@ -12,11 +12,9 @@
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="500.0" style="-fx-background-color: #353839;"
                       styleClass="dark_theme">
                     <children>
-                        <Button fx:id="btnAdd" mnemonicParsing="false" onMouseClicked="#addSongToPlayList"
-                                style="-fx-cursor: Hand;" styleClass="handCursor" text="Add"/>
-                        <Label prefWidth="100.0" text=" "/>
-                        <Button fx:id="btnSave" mnemonicParsing="false" onMouseClicked="#savePlayList"
-                                style="-fx-cursor: Hand;" styleClass="handCursor" text="Save"/>
+                        <Button fx:id="btnPlay" mnemonicParsing="false" onMouseClicked="#playButtonClicked"
+                                style="-fx-cursor: Hand;" styleClass="handCursor" text="Play"/>
+
                     </children>
                 </HBox>
             </children>
