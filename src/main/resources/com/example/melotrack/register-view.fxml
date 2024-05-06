@@ -5,49 +5,56 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="378.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.melotrack.RegisterController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.melotrack.RegisterController">
    <children>
-      <Label alignment="CENTER" prefHeight="50.0" prefWidth="378.0" text="Register" wrapText="true">
-         <font>
-            <Font size="34.0" />
-         </font></Label>
-      <TextField fx:id="nameTF" promptText="Enter Name">
-         <VBox.margin>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </VBox.margin></TextField>
-      <TextField fx:id="emailTF" promptText="Enter Email Address">
-         <VBox.margin>
-            <Insets bottom="10.0" left="10.0" right="10.0" />
-         </VBox.margin></TextField>
-      <TextField fx:id="phoneNumberTF" promptText="Enter Phone Number">
-         <VBox.margin>
-            <Insets bottom="10.0" left="10.0" right="10.0" />
-         </VBox.margin></TextField>
-      <TextField fx:id="usernameTF" promptText="Enter Username">
-         <VBox.margin>
-            <Insets bottom="10.0" left="10.0" right="10.0" />
-         </VBox.margin></TextField>
-      <PasswordField fx:id="passwordTF" promptText="Enter Password">
-         <VBox.margin>
-            <Insets bottom="10.0" left="10.0" right="10.0" />
-         </VBox.margin></PasswordField>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <ImageView fitHeight="580.0" fitWidth="640.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/music-159870_1280.png" />
+         </image>
+      </ImageView>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="250.0" spacing="10.0">
          <children>
-            <Button fx:id="registerButton" mnemonicParsing="false" onAction="#handleRegisterButton" text="Register">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-            </Button>
-            <Button fx:id="returnToSigninButton" mnemonicParsing="false" onAction="#handleReturnToSignin" text="Return to Sign In">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-            </Button>
+            <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="378.0" text="Register" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font size="34.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.5" />
+               </effect>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Name: " textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <effect>
+                  <DropShadow spread="0.5" />
+               </effect></Label>
+            <TextField fx:id="nameTF" maxWidth="1.7976931348623157E308" promptText="Enter Name" />
+            <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Email: " textAlignment="CENTER" textFill="WHITE">
+               <effect>
+                  <DropShadow spread="0.5" />
+               </effect></Label>
+            <TextField fx:id="emailTF" maxWidth="1.7976931348623157E308" promptText="Enter Email Address" />
+            <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Phone Number: " textAlignment="CENTER" textFill="WHITE">
+               <effect>
+                  <DropShadow spread="0.5" />
+               </effect></Label>
+            <TextField fx:id="phoneNumberTF" maxWidth="1.7976931348623157E308" promptText="Enter Phone Number" />
+            <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Password: " textAlignment="CENTER" textFill="WHITE">
+               <effect>
+                  <DropShadow spread="0.5" />
+               </effect></Label>
+            <PasswordField fx:id="passwordTF" maxWidth="1.7976931348623157E308" promptText="Enter Password" />
+            <Button fx:id="registerButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleRegisterButton" text="Register" />
+            <Button fx:id="returnToSigninButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleReturnToSignin" text="Return to Sign In" />
          </children>
-      </HBox>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
    </children>
-</VBox>
+</Pane>
