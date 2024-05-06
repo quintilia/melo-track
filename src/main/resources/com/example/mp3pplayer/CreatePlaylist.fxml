@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="500.0" styleClass="dark_theme" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mp3pplayer.CreatePlaylistController">
+    <children>
+        <VBox prefHeight="400.0" prefWidth="500.0">
+            <children>
+                <ListView fx:id="songPathsListView" prefHeight="300.0" prefWidth="500.0"/>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="500.0" style="-fx-background-color: #353839;"
+                      styleClass="dark_theme">
+                    <children>
+                        <Button fx:id="btnAdd" mnemonicParsing="false" onMouseClicked="#addSongToPlayList"
+                                style="-fx-cursor: Hand;" styleClass="handCursor" text="Add"/>
+                        <Label prefWidth="100.0" text=" "/>
+                        <Button fx:id="btnSave" mnemonicParsing="false" onMouseClicked="#savePlayList"
+                                style="-fx-cursor: Hand;" styleClass="handCursor" text="Save"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
